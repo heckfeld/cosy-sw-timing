@@ -1,0 +1,2 @@
+TCL=/home/mike/tcl
+export TCL

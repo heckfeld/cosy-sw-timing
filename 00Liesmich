@@ -1,0 +1,45 @@
+
+Mit Jan 29 14:57:00 CET 2014
+
+	ywei "versteckte Dateien"
+
+	/mnt/cc-x3/coob/conf/.sw_inform
+	/mnt/cc-x3/coob/conf/.sw_trigger
+
+Mi 22. Jul 08:15:09 CEST 2015
+
+	Befehle des Software Timing
+
+	$
+		G	- go
+		S	- stop
+		g	Get Information
+			S	- Status G/S
+			t	- Liste der bekannten GUI
+				{cocomm:Dummy Entry} {2mevcool:Cooler Solenoid} {motor:Motorsteuerung} {bb:Barrier Bucket} {pax:PAX} {hp6466c:HP 6466C} {exptiming:Experiment Timing} {feedback:Feedback System} {anzeige:Strahlbehinderung} {newcav:Neue HF} {stoco:Stochastische Kuehlung} {zyk:Zyklotron} {expol:Externes Polarimeter} {rpol:Ring-Polarimeter} {blwsteer:Backlegwinding-Steerer} {dsf:Dipol-Feld u. Strom} {ppuls:Qjump} {blwanke:ANKE-BLW} {dl:Data-Logger} {anker:ANKE} {ecool:HV-ecool} {blwdip:BLW Steerer} {psol:Umlademagnet} {rdiag:Diagnose WCM RSP} {sw_tx:SW_Timing} {use:USE} {visp:Viewer Scrapers} {nepol:NE-Polarimeter} {qbl:Quellen-Beamline} {emittanz:Emittanzmessung} {mwpc:MWPCs} {impuls:Impulsumstellung} {sext:Sextupole} {bpm:BeamPosMonitor} {ibl_diag:IBL-Diagnose} {exsep:Extraktions-Septen} {ecsteer:E-Cooler Steerer} {tx:Timing Sender} {bumper:Bumper} {steererv:vertikal Steerer} {steererh:horizontal Steerer} {ibl:Injektions-Beamline} {extr:Extraktion} {cosy:COSY}
+			a	- Liste der aktiven GUI
+				{steererh:horizontal Steerer}
+		t	- Timeout setzen und loeschen
+			s	"Name" "gui" time flag "command" experiment_mask
+					$ts "Test" "cocomm" 2000 1 "echo" 7
+			d	"Name" "gui" time flag "command"
+					$td "Test" "cocomm" 2000 1 "echo"
+			c	- loeschen der gesamten Tabelle
+			l	- Tabelle auflisten
+					{Test:cocomm:2000:1:7:echo}
+			w	- swap trigger table
+		u	- ustate nachricht an clients
+			s	- einrichten eines clients
+					$us 12345 snoopy
+			d	- loeschen eines clients
+					$ud 12345 snoopy
+			l	- clients auflisten
+	>
+	<	- 
+
+
+Sa 14. Nov 09:16:36 CET 2015
+
+	die tab_offset Arithmetik vom kurt wurde vom compiler angemeckert.
+	was kurt wollte, waren nur pointer offsets verarbeiten, dabei kann mansich bezüglich
+	der länge des objekts vom compiler helfen lassen:
